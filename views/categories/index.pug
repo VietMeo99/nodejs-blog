@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  // Page top section start
+  div.page-top-area.set-bg(data-setbg='img/headers-bg/2.jpg')
+    div.breadcrumb-area
+      a(href='/') Vdev Web
+      |  / 
+      span Add Category
+  // Page top section end
+  .container
+    form.search-top(action='/categories', method='GET')
+      button.se-btn
+        i.fa.fa-search
+      input(type='text', name='category', value= searchOptions.category ,placeholder='Search.....')
+    div(style="height: 100px")
+
+    each category in categories 
+      a.mb-2(href='/categories/' + category.id) #{category.name}
+      if user
+        a.btn.btn-warning.mr-3.ml-2(href='/categories/' + category.id +'/edit') Edit
+        form.d-inline(action='/categories/' + category.id+ '?_method=DELETE', method='POST') 
+          button.btn.btn-danger(type='submit') Delete
+        br
+      hr
+
+

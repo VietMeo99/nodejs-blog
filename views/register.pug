@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  // Page top section start
+  div.page-top-area.set-bg(data-setbg='img/headers-bg/2.jpg')
+    div.breadcrumb-area
+      a(href='/') Vdev Web
+      |  / 
+      span Register
+  // Page top section end
+  //- h2.page-header Register
+  p Please register using the form below
+  if errors
+    each error, i in errors
+      div.alert.alert-danger #{error.msg}
+  // Contact section start
+  section.set-bg.spad(data-setbg='../public/img/XX2.jpg', style="background-color: aqua;")
+    .contact-text
+        .container.p-0
+          span.sp-sub-title Vdev Web
+          h3.sp-title Write comment & Stay in touch
+          p
+            | Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habi tasse platea dictumst. Curabitur rhoncus auctor eleifend.
+          ul.con-info
+            li
+              i.flaticon-phone-call
+              | xxxx.xxx.551
+            li
+              i.flaticon-envelope
+              | vuhoangvietxxxxxx@gmail.com
+            li
+              i.flaticon-placeholder
+              | Linh Đàm
+              br
+              |  Hoàng Mai, HN      
+    .container.p-0
+      .row
+        .col-xl-8.offset-xl-4
+          form.contact-form(method='post', action='/users/register',enctype='multipart/form-data')
+            .row
+              .col-md-6
+                input(type='text',required name='name', placeholder='Your name')
+              .col-md-6
+                input( required name='email', type= "email", placeholder='E-mail')
+              .col-md-12
+                input(required name='username', type='text', placeholder='Enter Username')
+                .form-group
+                  label Password
+                  input.form-control(required name='password', type='password', placeholder='Enter Password')
+                .form-group
+                  label Confirm Password
+                  input.form-control(required name='password2', type='password', placeholder='Confirm Password')
+                .form-group
+                  label Profile Image
+                  input.form-control(name='profileimage', type='file')
+                input.btn.btn-primary.mb-3(type='submit', name='submit',value='Register')

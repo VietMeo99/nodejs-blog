@@ -1,0 +1,101 @@
+extends ../layout
+
+block content
+  // Page top section start
+  div.page-top-area.set-bg(data-setbg='img/headers-bg/2.jpg')
+    div.breadcrumb-area
+      a(href='/categories/' + post.category.id) #{post.category.name}
+      |  / 
+      span By #{post.author}
+      if user
+        hr
+        a.btn.btn-warning(href='/posts/'+post.id + '/edit') Edit
+  // Page top section end
+
+  // Blogs section start
+  section.blogs-section.sp-pad.spad(style="background-color: white;")
+    div.container-fluid.p-0
+      div.blog-list
+        // blog item
+        div.blog-item
+          div.blog-thumb.set-bg(data-setbg='.././public/img/blog/1.jpg')
+            img(height= "700px",src='' + post.coverImagePath)
+            div.post-date-warp
+              div.container
+                div.post-date-box
+                  h3
+                    a(href='/categories/' + post.category.id) #{post.category.name}
+                  p #{moment(post.date).format("MM-DD-YYYY")}
+          .container.p-0
+            h3.blog-title #{post.title}
+            .post-metas
+              .post-meta
+                | by 
+                a(href='') #{post.author}
+              | |
+              .post-meta Donation
+              | |
+              .post-meta
+                | in 
+                a(href='') tutorials
+            p
+              |
+              != post.body
+      .text-center
+        button.site-btn
+          a(href='/posts') load more
+  // Blogs section end
+
+  hr
+  br
+  .container
+    if (post.comments.length > 0)
+      h3 Comment
+      each comment in post.comments
+        p #{comment.name}
+        p #{comment.body}
+        p comment on #{moment(comment.commentDate).format("MM-DD-YYYY")}
+        hr
+      br
+    hr  
+
+  // Contact section start
+  section.contact-section.set-bg.spad(data-setbg='img/contact-bg.jpg')
+    .container-fluid.contact-warp
+      .contact-text
+        .container.p-0
+          span.sp-sub-title Vdev Web
+          h3.sp-title Write comment & Stay in touch
+          p
+            | Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habi tasse platea dictumst. Curabitur rhoncus auctor eleifend.
+          ul.con-info
+            li
+              i.flaticon-phone-call
+              | xxxx.xxx.551
+            li
+              i.flaticon-envelope
+              | vuhoangvietxxxxxx@gmail.com
+            li
+              i.flaticon-placeholder
+              | Linh Đàm
+              br
+              |  Hoàng Mai, HN
+      .container.p-0
+        .row
+          .col-xl-8.offset-xl-4
+            form.contact-form(method='post', action='/posts/'+ post.id)
+              input(name="postid", type="hidden", value= post.id)
+              .row
+                .col-md-6
+                  input(type='text',required name='name', placeholder='Your name')
+                .col-md-6
+                  input( required name='email', type= "email", placeholder='E-mail')
+                .col-md-12
+                  input(type='text', placeholder='Ở đây không nói tục chửi bậy')
+                  textarea(required name='body', placeholder='Message')
+                  button.site-btn.light(type="submit") Add comment
+  // Contact section end
+
+  //- script(defer='',src="/javascripts/doComment.js")
+
+

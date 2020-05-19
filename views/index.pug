@@ -1,0 +1,152 @@
+extends layout
+
+block content
+  section.hero-section
+    div.hero-slider.owl-carousel
+      div.hs-item.set-bg.sp-pad(data-setbg='/img/hero-slider/city1.jpg')
+        div.hs-text
+          h2.hs-title VIỆT
+          p.hs-des
+            | I CREATE THIS PAGE 
+            br
+            | Photographies, Food and more
+      div.hs-item.set-bg.sp-pad(data-setbg='/img/hero-slider/XX1.jpg')
+        div.hs-text
+          h2.hs-title Developer
+          p.hs-des
+            | I CREATE THIS PAGE 
+            br
+            | Photographies and more
+
+  // Intro section start
+  section.intro-section.sp-pad.spad
+    .container-fluid
+      .row
+        .col-xl-4.intro-text
+          span.sp-sub-title Amazing studio
+          h3.sp-title We are so Creative
+          p
+            | Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id.
+          a.site-btn(href='/posts/') Read More
+        .col-xl-7.offset-xl-1
+          figure.intro-img.mt-5.mt-xl-0
+            img(src='img/XX2.jpg', alt='')
+  // Intro section end
+
+  // Portfolio section start
+  section.portfolio-section
+    .portfolio-warp
+      // single item
+      .single-portfolio.set-bg(data-setbg='img/portfolio/XX1.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/XX1.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+      // single item
+      .single-portfolio.set-bg(data-setbg='img/portfolio/XX2.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/XX2.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+      // single item
+      .single-portfolio.set-bg(data-setbg='img/portfolio/XX3.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/XX3.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+      // single item
+      .single-portfolio.sm-wide.set-bg(data-setbg='img/portfolio/city2.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/city2.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+      // single item
+      .single-portfolio.sm-wide.set-bg(data-setbg='img/portfolio/city3.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/city3.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+      // single item
+      .single-portfolio.set-bg(data-setbg='img/portfolio/XX5.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/XX5.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+      // single item
+      .single-portfolio.sm-wide.md-w-100.set-bg(data-setbg='img/portfolio/Pocker1.jpg')
+        a.portfolio-info(href='single-work.html')
+          .pfbg.set-bg(data-setbg='img/portfolio/Pocker1.jpg')
+          h5 Summer in the desert
+          p Landscape Photography
+    .clearfix
+  // Portfolio section end
+  // Milestones section start
+  section.milestones-section.spad
+    .container
+      .row
+        .col-lg-3.col-md-6.fact-box
+          .fact-content
+            i.flaticon-gamepad
+            h2 48
+            p VIDEO gAMES
+        .col-lg-3.col-md-6.fact-box
+          .fact-content
+            i.flaticon-trophy
+            h2 7
+            p AWARDS WON
+        .col-lg-3.col-md-6.fact-box
+          .fact-content
+            i.flaticon-alarm-clock
+            h2 23K
+            p Pictures taken
+        .col-lg-3.col-md-6.fact-box
+          .fact-content
+            i.flaticon-laptop
+            h2 19
+            p Video tutorials
+  // Milestones section end
+  // Services section start
+  section.services-section.spad
+    .container-fluid.services-warp
+      .services-text
+        .container.p-0
+          span.sp-sub-title Amazing studio
+          h3.sp-title see What we offer
+          p
+            | Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habi tasse platea dictumst. Curabitur rhoncus auctor eleifend.
+          a.site-btn(href='#') Read More
+      .container.p-0
+        .row
+          .col-xl-8.offset-xl-4
+            .row
+              .col-md-6
+                .icon-box
+                  i.flaticon-video-camera
+                  h4 Video Footages
+                  p
+                    | Suspendisse dictum enim sit amet libero feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst.
+              .col-md-6
+                .icon-box
+                  i.flaticon-photo-camera
+                  h4 Photo Shootings
+                  p
+                    | Congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu.
+              .col-md-6
+                .icon-box
+                  i.flaticon-safebox
+                  h4 photo albums
+                  p
+                    | Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus.
+              .col-md-6
+                .icon-box
+                  i.flaticon-idea
+                  h4 Original ideas
+                  p
+                    | Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna.
+    .service-more-link
+      a.arrow-btn(href='/') F5
+        i.fa.fa-angle-right
+        i.fa.fa-angle-right
+        i.fa.fa-angle-right
+  // Services section start end
+

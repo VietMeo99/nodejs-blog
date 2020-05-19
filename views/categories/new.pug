@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  // Page top section start
+  div.page-top-area.set-bg(data-setbg='img/headers-bg/2.jpg')
+    div.breadcrumb-area
+      a(href='/') Vdev Web
+      |  / 
+      span New Category
+  // Page top section end
+  h2.page-header New Category
+  form(action='/categories', method='POST')
+    input(required type='text', name='category' )
+    br
+    br
+    .form-group
+      a.btn.btn-danger.mr-3(href='/categories') Cancel
+      button.btn.btn-primary(type='submit') Create

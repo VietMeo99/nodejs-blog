@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+  // Page top section start
+  div.page-top-area.set-bg(data-setbg='img/headers-bg/2.jpg')
+    div.breadcrumb-area
+      a(href='/') Vdev Web
+      |  / 
+      span All Post
+    // Page top section end
+  form.search-top(action='/posts', method='GET')
+    button.se-btn
+      i.fa.fa-search
+    input(type='text',name="title",value= searchOptions.title ,placeholder='Search.....')
+    input(type='date', name='publishedAfter', value=searchOptions.publishedAfter, placeholder='published After.....')
+    input(type='date', name='publishedBefore', value=searchOptions.publishedBefore, placeholder='published Before.....')
+
+  .container
+    //- div(style="height: 120px")
+    //-   form.search-top(action='/posts', method='GET')
+    //-     button.se-btn
+    //-       i.fa.fa-search
+    //-     input(type='text',name="title",value= searchOptions.title ,placeholder='Search.....')
+    //-     input(type='date', name='publishedAfter', value=searchOptions.publishedAfter, placeholder='published After.....')
+    //-     input(type='date', name='publishedBefore', value=searchOptions.publishedBefore, placeholder='published Before.....')
+    each post in posts
+      // Intro section start
+      section.intro-section.sp-pad.spad
+        div.container-fluid
+          div.row
+            div.col-xl-4.intro-text
+              span.sp-sub-title Post by #{post.author} on #{moment(post.date).format("MM-DD-YYYY")}
+              h3.sp-title
+                a(href='/posts/'+post._id) #{post.title}
+              p
+                | 
+                !=truncateText(post.body, 200)
+              a.site-btn(href='/posts/' + post._id) Read More
+              if user
+                a.site-btn(href='/posts/' + post._id + '/edit', style="color: yellow") Edit
+              hr
+              if user
+                form.d-inline(action='/posts/' + post._id + '?_method=DELETE', method='POST')
+                  button.btn.btn-danger(type='submit') Delete
+            div.col-xl-7.offset-xl-1
+              figure.intro-img.mt-5.mt-xl-0
+                img(src='' + post.coverImagePath, alt='')
+      // Intro section end
+      //- img(src='/images/' + post.mainimage)

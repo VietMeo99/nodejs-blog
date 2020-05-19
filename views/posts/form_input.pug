@@ -1,0 +1,23 @@
+.form-group
+  label(for='title') Title
+  input#title.form-control(name='title', placeholder='')
+.form-group
+  label(for='category') Category
+  select#category.form-control(name='category')
+    each category in categories 
+      option(label= category.name, value = category.id)=category.name
+.form-group
+  label(for='author') Author
+  select#author.form-control(multiple='', name= 'author')
+    option Vdev
+    option Việt
+    option Vũ Việt
+    option Vũ Hoàng Việt
+    option Việt Vi Vu
+.form-group
+  label(for='body') Body
+  textarea#body.form-control(rows='3', name='body')
+.form-group
+  label(for='image') Main Image
+  input#image.form-control(rows='3', type='file', name='mainimage',class="book-cover filepond")
+//- block content

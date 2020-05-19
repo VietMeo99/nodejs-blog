@@ -1,0 +1,9 @@
+extends layout
+
+block errorMessage
+  if locals.errorMessage != null 
+    div.btn.btn-danger #{errorMessage}
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}

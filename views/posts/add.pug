@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+  // Page top section start
+  div.page-top-area.set-bg(data-setbg='img/headers-bg/2.jpg')
+    div.breadcrumb-area
+      a(href='/') Vdev Web
+      |  / 
+      span Add Post
+  // Page top section end
+  .container
+    h1 Add Post
+    if errors
+      each error in errors
+        div.alert.alert-danger #{error.msg}
+    form(action='/posts', method='POST')
+      .form-group
+        label(for='title') Title
+        input#title.form-control(required name='title', placeholder='Enter title ...')
+      .form-group
+        label(for='category') Category
+        select#category.form-control(name='category')
+          each category in categories 
+            option(label= category.name, value = category.id)=category.name
+      .form-group
+        label(for='author') Author
+        input#author.form-control(required name='author', placeholder='Writer ...')
+        //- select#author.form-control(multiple='',required  name= 'author')
+        //-   option Vdev
+        //-   option Việt
+        //-   option Vũ Việt
+        //-   option Vũ Hoàng Việt
+        //-   option Việt Vi Vu
+      .form-row
+        .form-item.form-item-no-grow
+          label(for='image') Main Image
+          input#image(type='file',required name='mainimage',class="book-cover filepond")
+        .form-item
+          label(for='body') Body
+          textarea#body(rows='3',name='body')
+      button.btn.btn-primary.mb-3.mt-3(type='submit') save
+      script(src='/ckeditor/ckeditor.js')
+      //- script(src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js")
+      script
+          | CKEDITOR.replace('body')

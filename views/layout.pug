@@ -1,0 +1,132 @@
+doctype html
+html(lang='en')
+  head
+    title Vdev
+    link(rel = "icon" href =  
+        "/Logo3.png" 
+        type = "image/x-icon") 
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    //- link(rel="stylesheet", href="/styles/custom.css")
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='https://unpkg.com/filepond/dist/filepond.css', rel='stylesheet')
+    link(href='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css', rel='stylesheet')
+    script(defer='', src='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js')
+    script(defer='', src='https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js')
+    script(defer='', src='https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js')
+    script(defer='', src='https://unpkg.com/filepond/dist/filepond.js')
+    script(defer='', src='/javascripts/fileUpload.js')
+    // Favicon
+    // <link href="public/img/favicon.ico" rel="shortcut icon"/>
+    //- link(rel='icon', href='Logo3.png', type='image/icon type')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i', rel='stylesheet')
+    // Stylesheets
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/flaticon.css')
+    link(rel='stylesheet', href='/css/animate.css')
+    link(rel='stylesheet', href='/css/owl.carousel.css')
+    link(rel='stylesheet', href='/css/style.css')
+    style.
+      body{
+        background-color: #a8e6f7;
+      }
+      .form-item{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basic: 0;
+        margin-left: 2rem;
+      }
+      .form-item:first-child{
+        margin-left: 0;
+        width: 100px;
+      }
+      .book-cover {
+        width: var(--book-cover-width);
+        height: calc(var(--book-cover-width) / var(--book-cover-aspect-ratio));
+      }
+
+  body
+    //- div#preloder
+    //-   div.loader
+
+    // Header section start
+    header.header-section.sp-pad
+      h3.site-logo VIETDEV
+      //- form.search-top
+      //-   button.se-btn
+      //-     i.fa.fa-search
+      //-   input(type='text', placeholder='Search.....')
+      .nav-switch
+        i.fa.fa-bars
+      nav.main-menu
+        ul
+          li
+            a(href='/') Home
+          li
+            a(href='/') About us
+          li
+            a(href='/') Services
+          li
+            a(href='/') Members
+          li
+            a(href='/posts') Post
+          if user
+            li
+              a(href='/posts/add') Add Post
+          li
+            a(href='/categories') Category
+          if user
+            li
+              a(href='/categories/new') Add Category
+          if user  
+            li
+              a(href='/users/register') Register
+          if !user    
+            li
+              a(href='/users/login') Login
+          if user  
+            li
+              a(href='/users/logout') Logout
+    // Header section end
+    block errorMessage
+    != messages()
+    block content
+
+    // Footer section start
+    footer.footer-section.spad
+      .container.text-center
+        h2 Let&rsquo;s work together!
+        p vuhoangvietxxxxxx@gmail.com
+        .social
+          a(href='#')
+            i.fa.fa-pinterest
+          a(href='#')
+            i.fa.fa-facebook
+          a(href='#')
+            i.fa.fa-twitter
+          a(href='#')
+            i.fa.fa-dribbble
+          br
+          br
+          // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+          | Vdev Copyright &copy;
+          script.
+            document.write(new Date().getFullYear());
+          |  All rights reserved | This template is made with 
+          i.fa.fa-heart-o(aria-hidden='true')
+          |  by 
+          a(href='https://colorlib.com', target='_blank') Colorlib & Vdev
+          // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+    // Footer section end
+
+    // ====== Javascripts & Jquery ======
+    script(src='javascripts/jquery-3.2.1.min.js')
+    script(src='javascripts/bootstrap.min.js')
+    script(src='javascripts/owl.carousel.min.js')
+    script(src='javascripts/mixitup.min.js')
+    script(src='javascripts/circle-progress.min.js')
+    script(src='javascripts/main.js')
+
+    
